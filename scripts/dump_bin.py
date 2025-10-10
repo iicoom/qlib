@@ -1,5 +1,9 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
+import sys
+import os
+# 添加父目录到Python路径，以便导入qlib
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import abc
 import shutil
