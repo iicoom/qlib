@@ -315,8 +315,8 @@ def run_qlib_prediction(symbol="SZ002837") -> Dict[str, Any]:
         return {
             "success": True,
             "symbol": symbol,
-            "prediction": f"1. 趋势分析预测: {trend_pred:.2f} 判断依据: {trend} 2. 移动平均预测: {ma_pred:.2f} 3. 模式识别预测: {pattern_pred:.2f} 判断依据: {pattern_reason} 4. 技术指标预测: {tech_pred:.2f} 判断依据: {tech_reason}",
-            "final_prediction_price": f"📈 SZ002837 最终集成预测: {final_prediction:.2f}  📊 相对于最新收盘价({current_close:.2f}): {change_pct:+.2f}%",
+            "prediction": f"<ul><li>1. 趋势分析预测: {trend_pred:.2f} 判断依据: {trend} </li> <li>2. 移动平均预测: {ma_pred:.2f}</li> <li>3. 模式识别预测: {pattern_pred:.2f} 判断依据: {pattern_reason}</li> <li>4. 技术指标预测: {tech_pred:.2f} 判断依据: {tech_reason}</li></ul>",
+            "final_prediction_price": f"📈 {symbol} 最终集成预测: {final_prediction:.2f}  📊 相对于最新收盘价({current_close:.2f}): {change_pct:+.2f}%",
             "suggestion": {s,h},
             "keys": f"📊 关键技术位置:近期高点: {df['high'].max():.2f} 近期低点: {df['low'].min():.2f} 当前收盘: {current_close:.2f} 5日均价: {df['close'].tail(5).mean():.2f} 10日均价: {df['close'].tail(10).mean():.2f} 最新成交量: {df['volume'].iloc[-1]:,.0f}",
             "tips": f"⚠️ 风险提示: 基于{len(df)}个交易日的历史数据预测，仅供参考!"
